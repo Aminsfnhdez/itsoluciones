@@ -1,8 +1,8 @@
 export const environment = {
   production: false,
-  emailJsServiceId: 'YOUR_SERVICE_ID',
-  emailJsTemplateId: 'YOUR_TEMPLATE_ID',
-  emailJsPublicKey: 'YOUR_PUBLIC_KEY',
+  emailJsServiceId: 'service_qna62fl',
+  emailJsTemplateId: 'template_4wdfau9',
+  emailJsPublicKey: 'd_d-XkdFV80tOZTYh',
   whatsappNumber: '573217865558',
   contactEmail: 'itsinformaticos@gmail.com',
   contactPhone: '3217865558'

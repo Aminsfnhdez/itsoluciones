@@ -212,7 +212,10 @@ export class ContactFormComponent {
           }
         },
         error: (err) => {
-          console.error(err);
+          console.error('EmailJS Error Details:', JSON.stringify(err));
+          if (err && err.text) {
+             console.error('Error Message:', err.text);
+          }
           this.submitting = false;
           this.submitError = true;
         }

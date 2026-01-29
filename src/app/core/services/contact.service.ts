@@ -25,7 +25,9 @@ export class ContactService {
           service_type: formData.serviceType,
           message: formData.message,
           preferred_contact: formData.preferredContact,
-          urgency: formData.urgency
+          urgency: formData.urgency,
+          to_email: formData.email, // Required for auto-reply
+          reply_to: formData.email // Standard practice
         }
       ).then(
         (response) => {
@@ -36,9 +38,11 @@ export class ContactService {
           observer.complete();
         },
         (error) => {
+          console.error('🔴 RAW EMAILJS ERROR:', error);
           observer.error({
             success: false,
-            message: 'Error al enviar el mensaje. Por favor intenta de nuevo.'
+            message: 'Error al enviar el mensaje. Por favor intenta de nuevo.',
+            originalError: error
           });
         }
       );
