@@ -1,0 +1,83 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LucideAngularModule, Star } from 'lucide-angular';
+import { SectionTitleComponent } from '../../shared/components/section-title/section-title';
+
+@Component({
+  selector: 'app-about-section',
+  standalone: true,
+  imports: [CommonModule, SectionTitleComponent, LucideAngularModule],
+  template: `
+    <section id="about" class="py-20 overflow-hidden relative">
+      <div class="absolute inset-0 bg-primary-dark/5"></div>
+      
+      <div class="container mx-auto px-4 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <!-- Image/Timeline -->
+          <div class="relative">
+             <div class="aspect-video bg-bg-card rounded-2xl border border-slate-700 flex items-center justify-center overflow-hidden relative">
+                <!-- Placeholder for team image -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary-dark/80 to-transparent z-10"></div>
+                <div class="text-6xl z-0">🏢</div>
+                
+                <div class="absolute bottom-6 left-6 z-20">
+                  <div class="text-3xl font-bold text-white">2020</div>
+                  <div class="text-sm text-primary-cyan">Fundación</div>
+                </div>
+             </div>
+             
+             <!-- Floating Badge -->
+             <div class="absolute -bottom-6 -right-6 bg-bg-card border border-primary-cyan/30 p-6 rounded-xl shadow-xl backdrop-blur-md animate-float">
+                <div class="flex items-center space-x-3">
+                  <span class="text-4xl">
+                    <lucide-icon [img]="icons.Star" [size]="32" class="text-yellow-400"></lucide-icon>
+                  </span>
+                  <div>
+                    <div class="text-xl font-bold text-white">4.8/5</div>
+                    <div class="text-xs text-slate-400">Calificación Clientes</div>
+                  </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <app-section-title
+              subtitle="Sobre Nosotros"
+              title="Tu Aliado Tecnológico en Urabá"
+              alignment="left">
+            </app-section-title>
+            
+            <p class="text-slate-300 text-lg mb-6">
+              Desde 2020, <span class="text-white font-semibold">IT Soluciones</span> ha estado transformando la manera en que las empresas y hogares de Apartadó gestionan su tecnología.
+            </p>
+            
+            <p class="text-slate-400 mb-8">
+              Nuestro compromiso es ofrecer soluciones tecnológicas profesionales, accesibles y de calidad, con un servicio personalizado que se adapta a las necesidades de cada cliente. No somos solo técnicos, somos tu departamento de sistemas externo.
+            </p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-6">
+              <div *ngFor="let stat of stats" class="bg-bg-card/50 p-4 rounded-lg border border-slate-700 hover:border-primary-cyan transition-colors">
+                <div class="text-3xl font-bold gradient-text mb-1">{{ stat.value }}</div>
+                <div class="text-sm text-slate-400">{{ stat.label }}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  `,
+  styles: []
+})
+export class AboutSectionComponent {
+  readonly icons = { Star };
+  stats = [
+    { value: '4+', label: 'Años de Experiencia' },
+    { value: '100+', label: 'Clientes Satisfechos' },
+    { value: '500+', label: 'Servicios Realizados' },
+    { value: '100%', label: 'Garantía de Calidad' }
+  ];
+}

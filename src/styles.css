@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg-dark text-slate-300 font-sans;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-cyan to-primary-blue bg-clip-text text-transparent;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+.glass {
+  @apply bg-bg-card/30 backdrop-blur-md border border-white/10;
+}

@@ -1,0 +1,66 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LucideAngularModule, MessageCircle, Phone, Mail } from 'lucide-angular';
+import { ButtonComponent } from '../../shared/components/button/button';
+import { WhatsappService } from '../../core/services/whatsapp.service';
+import { environment } from '../../../environments/environment';
+
+@Component({
+  selector: 'app-cta-section',
+  standalone: true,
+  imports: [CommonModule, ButtonComponent, LucideAngularModule],
+  template: `
+    <section class="py-20 bg-gradient-to-br from-primary-dark to-bg-darker relative overflow-hidden">
+      <!-- Decorators -->
+      <div class="absolute top-0 right-0 p-20 bg-primary-cyan/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 left-0 p-20 bg-primary-blue/5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+      <div class="container mx-auto px-4 relative z-10 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          ¿Listo para Mejorar tu Tecnología?
+        </h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+          Contáctanos ahora y recibe atención personalizada. Diagnóstico profesional y soluciones garantizadas.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <app-button 
+            (clicked)="contactWhatsApp()"
+            variant="primary"
+            size="lg"
+            class="group">
+            <div class="flex items-center space-x-2">
+              <lucide-icon [img]="icons.MessageCircle" [size]="20"></lucide-icon>
+              <span>Chatear por WhatsApp</span>
+            </div>
+          </app-button>
+          
+          <app-button 
+            (clicked)="callNow()"
+            variant="secondary"
+            size="lg">
+            <div class="flex items-center space-x-2">
+              <lucide-icon [img]="icons.Phone" [size]="20"></lucide-icon>
+              <span>Llamar Ahora</span>
+            </div>
+          </app-button>
+        </div>
+      </div>
+    </section>
+  `,
+  styles: []
+})
+export class CtaComponent {
+  readonly icons = { MessageCircle, Phone, Mail };
+  contactPhone = environment.contactPhone;
+
+  constructor(private whatsappService: WhatsappService) {}
+
+  contactWhatsApp() {
+    this.whatsappService.openWhatsApp('Hola, estoy interesado en sus servicios.');
+  }
+
+  callNow() {
+    window.location.href = `tel:+57${this.contactPhone}`;
+  }
+}
