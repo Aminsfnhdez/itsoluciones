@@ -1,59 +1,96 @@
-# ItSoluciones
+# IT Soluciones - Landing Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Landing page profesional para **IT Soluciones**, empresa líder en soporte técnico y soluciones tecnológicas en Apartadó y la región de Urabá.
 
-## Development server
+Este proyecto fue desarrollado utilizando tecnologías modernas para garantizar rendimiento, escalabilidad y una excelente experiencia de usuario.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🛠️ Stack Tecnológico
+
+- **Framework:** [Angular 21](https://angular.dev/)
+- **Estilos:** [Tailwind CSS v3](https://tailwindcss.com/)
+- **Iconos:** [Lucide Angular](https://lucide.dev/guide/packages/lucide-angular)
+- **Arquitectura:** Standalone Components
+- **Lenguaje:** TypeScript (Strict Mode)
+- **Formularios:** Angular Reactive Forms
+- **Integraciones:** WhatsApp API, EmailJS (preparado)
+
+## 🚀 Características Principales
+
+- **Diseño Responsive:** Totalmente adaptado a móviles, tablets y escritorio.
+- **Navegación Fluida:** Header sticky con menú móvil y scroll suave a secciones.
+- **Modo Oscuro:** Interfaz moderna con tema oscuro y acentos neón (Cyan/Blue).
+- **Secciones:**
+  - **Héroe:** Presentación de alto impacto con llamadas a la acción.
+  - **Servicios:** Catálogo detallado de servicios con iconos ilustrativos.
+  - **Modalidades:** Diferenciación clara entre servicio a domicilio y remoto.
+  - **Nosotros:** Estadísticas y trayectoria de la empresa.
+  - **Clientes:** Sección de prueba social y aliados.
+  - **Cobertura:** Visualización de áreas de servicio (Presencial/Remoto).
+  - **Contacto:** Formulario con validaciones y botón directo a WhatsApp.
+- **SEO Ready:** Servicio de Meta Tags configurado para compartir en redes sociales.
+
+## 📂 Estructura del Proyecto
+
+El proyecto sigue una arquitectura modular y escalable:
+
+```
+src/app/
+├── core/               # Lógica de negocio singleton
+│   ├── models/         # Interfaces y tipos (Contact, Service)
+│   └── services/       # Servicios globales (Meta, WhatsApp, Contact)
+├── features/           # Componentes funcionales por sección
+│   ├── about/
+│   ├── clients/
+│   ├── contact/
+│   ├── coverage/
+│   ├── cta/
+│   ├── hero/
+│   └── services/
+├── layout/             # Componentes estructurales
+│   ├── footer/
+│   ├── header/
+│   └── navbar/
+└── shared/             # Componentes reutilizables
+    ├── components/
+    │   ├── button/
+    │   ├── card/
+    │   ├── input/
+    │   └── section-title/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ⚙️ Instalación y Ejecución
 
-## Code scaffolding
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/Aminsfnhdez/itsoluciones.git
+   cd it-soluciones
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate component component-name
-```
+3. **Ejecutar servidor de desarrollo:**
+   ```bash
+   ng serve
+   ```
+   Navega a `http://localhost:4200/`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+4. **Construir para producción:**
+   ```bash
+   ng build --configuration production
+   ```
+   Los archivos generados estarán en la carpeta `dist/it-soluciones`.
 
-```bash
-ng generate --help
-```
+## 📱 Contacto y Soporte
 
-## Building
+**IT Soluciones** - "Solución de Sistemas a tu Alcance"
+- **Ubicación:** Apartadó, Antioquia
+- **Email:** itsinformaticos@gmail.com
+- **Teléfono:** +57 321 786 5558
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+Desarrollado con ❤️ para IT Soluciones.
