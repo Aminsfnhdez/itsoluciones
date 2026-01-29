@@ -13,7 +13,10 @@ import { environment } from '../../../environments/environment';
           
           <!-- Column 1: Info -->
           <div>
-            <h3 class="text-2xl font-bold gradient-text mb-4">IT Soluciones</h3>
+            <div class="flex items-center space-x-2">
+              <img src="itsolucoinesico3.png" alt="IT Soluciones Logo" class="w-20 h-20 object-contain">
+              <h3 class="text-2xl font-bold gradient-text mb-4">IT Soluciones</h3>
+            </div>
             <p class="text-slate-400 mb-4">"Solución de Sistemas a tu Alcance"</p>
             <div class="space-y-2 text-slate-400">
               <p>📍 Apartadó, Antioquia</p>

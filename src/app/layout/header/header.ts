@@ -16,6 +16,7 @@ import { WhatsappService } from '../../core/services/whatsapp.service';
       <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
+          <img src="itsolucoinesico3.png" alt="IT Soluciones Logo" class="w-10 h-10 object-contain">
           <div class="text-2xl font-bold gradient-text">IT Soluciones</div>
         </div>
 

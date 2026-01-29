@@ -66,8 +66,8 @@ import { environment } from '../../../environments/environment';
           <div class="hidden lg:block">
             <div class="relative">
               <!-- Placeholder for illustration - replace with actual image -->
-              <div class="aspect-square bg-gradient-to-br from-primary-blue/20 to-primary-cyan/20 rounded-3xl flex items-center justify-center glass">
-                <div class="text-8xl">💻</div>
+              <div class="aspect-square bg-gradient-to-br from-primary-blue/20 to-primary-cyan/20 rounded-3xl flex items-center justify-center glass p-8">
+                <img src="itsolucoinesico3.png" alt="IT Soluciones Logo" class="w-full h-full object-contain drop-shadow-2xl animate-float">
               </div>
               
               <!-- Floating elements -->

@@ -35,7 +35,7 @@ export class ClientsSectionComponent {
   clients = [
     { name: 'Supermotos del Golfo', icon: '🏍️' },
     { name: 'Nuevo Récord', icon: '🏢' },
-    { name: 'Cerámicas Cerrato', icon: '🏗️' },
+    { name: 'Cerámicas El Rodeo', icon: '🏗️' },
     { name: 'Clientes Particulares', icon: '👥' }
   ];
 }
