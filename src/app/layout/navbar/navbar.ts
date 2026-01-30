@@ -5,15 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <nav class="hidden md:flex items-center space-x-8">
-      <a *ngFor="let item of navItems" 
-         [href]="item.href"
-         class="text-slate-300 hover:text-primary-cyan transition-colors duration-300">
-        {{ item.label }}
-      </a>
-    </nav>
-  `,
+  templateUrl: './navbar.html',
   styles: []
 })
 export class NavbarComponent {

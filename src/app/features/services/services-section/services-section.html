@@ -1,1 +1,25 @@
-<p>services-section works!</p>
+<section id="services" class="py-20 bg-bg-dark">
+    <div class="container mx-auto px-4">
+        <app-section-title subtitle="Nuestros Servicios" title="Soluciones Integrales"
+            description="Ofrecemos una amplia gama de servicios profesionales para cubrir todas tus necesidades tecnológicas.">
+        </app-section-title>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <app-card *ngFor="let service of services" [hover]="true" class="h-full">
+                <div class="flex flex-col h-full">
+                    <div class="mb-4 p-3 rounded-lg bg-primary-blue/10 w-fit text-primary-cyan">
+                        <lucide-icon [img]="icons[service.icon]" [size]="32" [strokeWidth]="2"></lucide-icon>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary-cyan transition-colors">
+                        {{ service.title }}
+                    </h3>
+
+                    <p class="text-slate-400 text-sm flex-grow">
+                        {{ service.description }}
+                    </p>
+                </div>
+            </app-card>
+        </div>
+    </div>
+</section>

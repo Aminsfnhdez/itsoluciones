@@ -6,64 +6,7 @@ import { environment } from '../../../environments/environment';
   selector: 'app-footer',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <footer class="bg-bg-darker border-t border-slate-800 py-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          
-          <!-- Column 1: Info -->
-          <div>
-            <div class="flex items-center space-x-2">
-              <img src="itsolucoinesico3.png" alt="IT Soluciones Logo" class="w-20 h-20 object-contain">
-              <h3 class="text-2xl font-bold gradient-text mb-4">IT Soluciones</h3>
-            </div>
-            <p class="text-slate-400 mb-4">"Solución de Sistemas a tu Alcance"</p>
-            <div class="space-y-2 text-slate-400">
-              <p>📍 Apartadó, Antioquia</p>
-              <p>🕐 Lun - Sáb: 8:00 AM - 6:00 PM</p>
-            </div>
-          </div>
-
-          <!-- Column 2: Quick Links -->
-          <div>
-            <h4 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h4>
-            <ul class="space-y-2">
-              <li *ngFor="let link of quickLinks">
-                <a [href]="link.href" class="text-slate-400 hover:text-primary-cyan transition-colors">
-                  {{ link.label }}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Contact -->
-          <div>
-            <h4 class="text-lg font-semibold text-white mb-4">Contacto</h4>
-            <div class="space-y-3">
-              <a [href]="'tel:+57' + contactPhone" 
-                 class="flex items-center text-slate-400 hover:text-primary-cyan transition-colors">
-                <span class="mr-2">📞</span> {{ contactPhone }}
-              </a>
-              <a [href]="'mailto:' + contactEmail"
-                 class="flex items-center text-slate-400 hover:text-primary-cyan transition-colors">
-                <span class="mr-2">📧</span> {{ contactEmail }}
-              </a>
-              <a [href]="whatsappLink"
-                 target="_blank"
-                 class="flex items-center text-slate-400 hover:text-primary-cyan transition-colors">
-                <span class="mr-2">💬</span> WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom -->
-        <div class="border-t border-slate-800 pt-8 text-center text-slate-400">
-          <p>&copy; {{ currentYear }} IT Soluciones. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
-  `,
+  templateUrl: './footer.html',
   styles: []
 })
 export class FooterComponent {

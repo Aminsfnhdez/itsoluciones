@@ -5,11 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-card',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div [class]="cardClasses">
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: './card.html',
   styles: []
 })
 export class CardComponent {
