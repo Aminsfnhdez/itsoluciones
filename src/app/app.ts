@@ -12,6 +12,7 @@ import { ClientsSectionComponent } from './features/clients/clients';
 import { CoverageSectionComponent } from './features/coverage/coverage';
 import { ContactFormComponent } from './features/contact/contact-form/contact-form';
 import { CtaComponent } from './features/cta/cta';
+import { WhatsAppFloatingButtonComponent } from './shared/components/whatsapp-floating-button/whatsapp-floating-button.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ import { CtaComponent } from './features/cta/cta';
     ClientsSectionComponent,
     CoverageSectionComponent,
     ContactFormComponent,
-    CtaComponent
+    CtaComponent,
+    WhatsAppFloatingButtonComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -60,30 +60,64 @@ src/app/
     │   └── section-title/
 ```
 
-## ⚙️ Instalación y Ejecución
+## ⚙️ Configuración y Ejecución
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/Aminsfnhdez/itsoluciones.git
-   cd it-soluciones
-   ```
+### 1. Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/Aminsfnhdez/itsoluciones.git
+cd it-soluciones
 
-2. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
+# Instalar dependencias
+npm install
+```
 
-3. **Ejecutar servidor de desarrollo:**
-   ```bash
-   ng serve
-   ```
-   Navega a `http://localhost:4200/`.
+### 2. Variables de Entorno
+Para que el formulario de contacto y los enlaces funcionen correctamente, debes configurar las variables en `src/environments/environment.ts` (y `environment.prod.ts` para producción).
 
-4. **Construir para producción:**
-   ```bash
-   ng build --configuration production
-   ```
-   Los archivos generados estarán en la carpeta `dist/it-soluciones`.
+```typescript
+export const environment = {
+  production: false,
+  // Configuración de EmailJS (https://www.emailjs.com/)
+  emailJsServiceId: 'TU_SERVICE_ID',
+  emailJsTemplateId: 'TU_TEMPLATE_ID',
+  emailJsPublicKey: 'TU_PUBLIC_KEY',
+  
+  // Información de Contacto
+  whatsappNumber: '573000000000', // Sin símbolos ni espacios
+  contactEmail: 'info@tudominio.com',
+  contactPhone: '300 000 0000'
+};
+```
+
+### 3. Desarrollo Local
+Inicia el servidor de desarrollo con recarga automática:
+```bash
+ng serve
+```
+Navega a `http://localhost:4200/`.
+
+### 4. Build de Producción
+Genera los archivos optimizados para despliegue:
+```bash
+ng build --configuration production
+```
+Los archivos se generarán en la carpeta `dist/it-soluciones`.
+
+## 🚀 Despliegue
+
+### Vercel (Recomendado)
+Este proyecto está optimizado para desplegarse en Vercel sin configuración adicional.
+1. Instala Vercel CLI: `npm i -g vercel`
+2. Ejecuta `vercel` en la raíz del proyecto.
+3. Sigue las instrucciones en consola.
+
+O conecta tu repositorio de GitHub directamente en el dashboard de Vercel.
+
+### Netlify / Otros
+Para cualquier hosting estático:
+1. Ejecuta el comando de build.
+2. Sube el contenido de la carpeta `dist/it-soluciones/browser` (asegúrate de configurar las reglas de reescritura SPA si es necesario).
 
 ## 📱 Contacto y Soporte
 
