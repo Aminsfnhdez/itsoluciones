@@ -14,32 +14,59 @@
                 description="Llevamos soluciones tecnológicas a donde las necesites.">
             </app-section-title>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div class="flex flex-col items-center">
-                    <div class="p-4 bg-primary-blue/20 rounded-full text-primary-cyan mb-4 animate-pulse-glow">
-                        <lucide-icon [img]="icons.MapPin" [size]="48"></lucide-icon>
+            <div class="mt-8 space-y-8">
+                <!-- Mapa de Antioquia -->
+                <div class="relative max-w-md mx-auto">
+                    <img src="antioquia-map.png" alt="Mapa de Antioquia - Zona de Urabá" class="w-full h-auto">
+
+                    <!-- Punto animado en Apartadó -->
+                    <div class="absolute top-[28%] left-[18%] transform -translate-x-1/2 -translate-y-1/2">
+                        <!-- Pulso exterior -->
+                        <div class="absolute w-6 h-6 bg-primary-cyan rounded-full animate-ping opacity-75"></div>
+                        <!-- Punto central -->
+                        <div
+                            class="relative w-4 h-4 bg-primary-cyan rounded-full shadow-lg shadow-primary-cyan/50 animate-pulse">
+                            <div class="absolute inset-0 bg-white rounded-full opacity-50"></div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Presencial</h3>
-                    <ul class="text-slate-400 space-y-2">
-                        <li>✅ Apartadó (Sede Principal)</li>
-                        <li>✅ Carepa</li>
-                        <li>✅ Chigorodó</li>
-                        <li>✅ Turbo</li>
-                    </ul>
+
+                    <!-- Etiqueta de Apartadó -->
+                    <div class="absolute top-[20%] left-[18%] transform -translate-x-1/2 -translate-y-full mb-2">
+                        <div
+                            class="bg-bg-darker/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary-cyan/50">
+                            <p class="text-primary-cyan text-xs font-semibold whitespace-nowrap">📍 Apartadó</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div
-                    class="flex flex-col items-center border-t md:border-t-0 md:border-l border-slate-700 pt-8 md:pt-0">
-                    <div class="p-4 bg-primary-cyan/20 rounded-full text-primary-blue mb-4">
-                        <lucide-icon [img]="icons.Globe" [size]="48"></lucide-icon>
+                <!-- Grid de Servicios -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="p-4 bg-primary-blue/20 rounded-full text-primary-cyan mb-4 animate-pulse-glow">
+                            <lucide-icon [img]="icons.MapPin" [size]="48"></lucide-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Presencial</h3>
+                        <ul class="text-slate-400 space-y-2">
+                            <li>✅ Apartadó (Sede Principal)</li>
+                            <li>✅ Carepa</li>
+                            <li>✅ Chigorodó</li>
+                            <li>✅ Turbo</li>
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Remoto</h3>
-                    <p class="text-slate-400">
-                        Atendemos solicitudes de soporte remoto en
-                        <strong>toda Colombia</strong>.
-                        <br>
-                        <span class="text-sm italic">(Requiere conexión a internet estable)</span>
-                    </p>
+
+                    <div
+                        class="flex flex-col items-center border-t md:border-t-0 md:border-l border-slate-700 pt-8 md:pt-0">
+                        <div class="p-4 bg-primary-cyan/20 rounded-full text-primary-blue mb-4">
+                            <lucide-icon [img]="icons.Globe" [size]="48"></lucide-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Remoto</h3>
+                        <p class="text-slate-400">
+                            Atendemos solicitudes de soporte remoto en
+                            <strong>toda Colombia</strong>.
+                            <br>
+                            <span class="text-sm italic">(Requiere conexión a internet estable)</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
