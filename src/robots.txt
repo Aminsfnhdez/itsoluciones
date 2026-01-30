@@ -1,0 +1,6 @@
+# Robots.txt para IT Soluciones
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.itsoluciones.co/sitemap.xml
