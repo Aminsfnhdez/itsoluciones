@@ -7,6 +7,27 @@ import { ButtonComponent } from '../../../shared/components/button/button';
 import { SectionTitleComponent } from '../../../shared/components/section-title/section-title';
 import { ContactForm, ServiceType } from '../../../core/models/contact.model';
 
+/**
+ * Contact form component for lead generation and client inquiries.
+ * 
+ * @component
+ * @description Complex reactive form for collecting client information and service requests.
+ * Includes form validation, EmailJS integration, success/error states, and urgency flagging.
+ * Validates name, email, phone, service type selection, and message content.
+ * 
+ * @features
+ * - Reactive form with comprehensive validation
+ * - 9 predefined service types
+ * - Optional urgency flag
+ * - Email submission via EmailJS
+ * - Success and error feedback messages
+ * - Auto-reset after successful submission
+ * 
+ * @example
+ * ```html
+ * <app-contact-form></app-contact-form>
+ * ```
+ */
 @Component({
   selector: 'app-contact-form',
   standalone: true,
@@ -23,11 +44,19 @@ import { ContactForm, ServiceType } from '../../../core/models/contact.model';
   `]
 })
 export class ContactFormComponent {
+  /** Reactive form group for contact form */
   contactForm: FormGroup;
+  
+  /** Whether form is currently being submitted */
   submitting = false;
+  
+  /** Whether form was submitted successfully */
   submitSuccess = false;
+  
+  /** Whether form submission failed */
   submitError = false;
 
+  /** Available service types for dropdown selection */
   serviceTypes: { value: ServiceType, label: string }[] = [
     { value: 'maintenance', label: 'Mantenimiento de Equipos' },
     { value: 'computer-repair', label: 'Reparación de Computadoras' },
@@ -40,6 +69,12 @@ export class ContactFormComponent {
     { value: 'other', label: 'Otro Servicio' }
   ];
 
+  /**
+   * Initializes the contact form with validation rules.
+   * 
+   * @param {FormBuilder} fb - Angular form builder service
+   * @param {ContactService} contactService - Service for email sending
+   */
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService
@@ -55,6 +90,18 @@ export class ContactFormComponent {
     });
   }
 
+  /**
+   * Gets user-friendly error messages for form fields.
+   * 
+   * @param {string} field - Form field name
+   * @returns {string} Error message for the field
+   * 
+   * @example
+   * ```typescript
+   * this.getErrorMessage('email'); // Returns: 'Ingresa un correo válido'
+   * this.getErrorMessage('name'); // Returns: 'Este campo es obligatorio'
+   * ```
+   */
   getErrorMessage(field: string): string {
     const control = this.contactForm.get(field);
     if (control?.hasError('required')) return 'Este campo es obligatorio';
@@ -64,6 +111,21 @@ export class ContactFormComponent {
     return '';
   }
 
+  /**
+   * Handles form submission.
+   * Validates form, sends data via EmailJS, and manages success/error states.
+   * 
+   * @returns {void}
+   * 
+   * @description
+   * Flow:
+   * 1. Validates form
+   * 2. Maps form data to ContactForm model
+   * 3. Sends email via ContactService
+   * 4. Shows success message and resets form on success
+   * 5. Shows error message on failure
+   * 6. Auto-hides success message after 5 seconds
+   */
   onSubmit(): void {
     if (this.contactForm.valid) {
       this.submitting = true;

@@ -5,6 +5,29 @@ import { CardComponent } from '../../../shared/components/card/card';
 import { SectionTitleComponent } from '../../../shared/components/section-title/section-title';
 import { Service } from '../../../core/models/service.model';
 
+/**
+ * Services catalog section component.
+ * 
+ * @component
+ * @description Displays the complete catalog of services offered by IT Soluciones.
+ * Shows 8 service cards in a responsive grid with icons, titles, and descriptions.
+ * Icons are provided by Lucide Angular.
+ * 
+ * @services
+ * 1. Mantenimiento de Equipos
+ * 2. Reparación de Computadoras
+ * 3. Reparación de Impresoras
+ * 4. Instalación de Programas
+ * 5. Programas de Ingeniería
+ * 6. Venta de Insumos
+ * 7. Cableado Estructurado
+ * 8. Recarga de Tóner
+ * 
+ * @example
+ * ```html
+ * <app-services-section></app-services-section>
+ * ```
+ */
 @Component({
   selector: 'app-services-section',
   standalone: true,
@@ -18,7 +41,10 @@ import { Service } from '../../../core/models/service.model';
   styles: []
 })
 export class ServicesSectionComponent {
-  // Register icons for this component
+  /**
+   * Lucide icon registry for service icons.
+   * Maps icon names to Lucide icon components.
+   */
   readonly icons: Record<string, any> = { 
     wrench: Wrench, 
     laptop: Laptop, 
@@ -30,6 +56,11 @@ export class ServicesSectionComponent {
     droplet: Droplet 
   };
 
+  /**
+   * Array of service offerings with details.
+   * Each service includes id, title, description, and associated icon.
+   * This data populates the service cards in the template.
+   */
   services: Service[] = [
     {
       id: '1',

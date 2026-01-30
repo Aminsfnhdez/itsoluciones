@@ -14,6 +14,34 @@ import { ContactFormComponent } from './features/contact/contact-form/contact-fo
 import { CtaComponent } from './features/cta/cta';
 import { WhatsAppFloatingButtonComponent } from './shared/components/whatsapp-floating-button/whatsapp-floating-button.component';
 
+/**
+ * Root application component for IT Soluciones landing page.
+ * 
+ * @component
+ * @description Main application component that serves as the entry point and container
+ * for the entire IT Soluciones single-page landing. Initializes SEO meta tags on construction
+ * and composes all feature sections in the correct order.
+ * 
+ * @structure
+ * - Header (navigation and branding)
+ * - Hero (main call-to-action)
+ * - Services Section (service catalog)
+ * - Service Modes (home vs remote)
+ * - About Section (company info and stats)
+ * - Clients Section (social proof)
+ * - Coverage Section (geographic coverage with map)
+ * - Contact Form (lead generation)
+ * - CTA Section (final call-to-action)
+ * - Footer (links and contact info)
+ * - WhatsApp Floating Button (persistent contact option)
+ * 
+ * @seo
+ * Automatically sets default meta tags for:
+ * - Page title
+ * - Meta description
+ * - Open Graph tags
+ * - Twitter Card tags
+ */
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -35,6 +63,11 @@ import { WhatsAppFloatingButtonComponent } from './shared/components/whatsapp-fl
   styleUrl: './app.css'
 })
 export class App {
+  /**
+   * Initializes the application and sets default SEO meta tags.
+   * 
+   * @param {MetaService} metaService - Service for managing SEO meta tags
+   */
   constructor(private metaService: MetaService) {
     this.metaService.updateMetaTags({
       title: 'IT Soluciones - Soporte Técnico y Tecnología en Urabá',
