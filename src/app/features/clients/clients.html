@@ -4,15 +4,23 @@
             description="Empresas destacadas de Urabá que han optimizado su tecnología con nosotros.">
         </app-section-title>
 
-        <div class="flex flex-wrap justify-center gap-8 md:gap-12 items-center opacity-75">
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10 items-stretch">
             <div *ngFor="let client of clients"
-                class="group relative bg-bg-card p-6 rounded-xl border border-slate-800 hover:border-primary-cyan/50 transition-all duration-300 hover:-translate-y-1 w-48 h-32 flex items-center justify-center">
+                class="group relative bg-bg-card p-6 rounded-2xl border border-slate-800 hover:border-primary-cyan/40 transition-all duration-500 hover:-translate-y-2 w-48 flex flex-col items-center justify-between shadow-lg hover:shadow-primary-cyan/10">
 
-                <!-- Placeholder for logos -->
-                <div class="text-center group-hover:scale-110 transition-transform">
-                    <span class="text-4xl mb-2 block">{{ client.icon }}</span>
-                    <span class="text-sm font-medium text-slate-300 group-hover:text-primary-cyan">{{ client.name
-                        }}</span>
+                <!-- Logo Container -->
+                <div
+                    class="flex-1 flex items-center justify-center mb-4 w-full h-16 group-hover:scale-105 transition-transform duration-500">
+                    <img [src]="client.logo" [alt]="client.alt" [title]="client.name"
+                        class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+
+                <!-- Client Name -->
+                <div class="text-center">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover:text-primary-cyan transition-colors duration-300">
+                        {{ client.name }}
+                    </span>
                 </div>
             </div>
         </div>

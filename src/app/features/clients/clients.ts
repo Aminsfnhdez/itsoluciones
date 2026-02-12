@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionTitleComponent } from '../../shared/components/section-title/section-title';
+import { Client } from '../../core/models/client.model';
 
 /**
  * Clients showcase section for social proof.
  * 
  * @component
  * @description Displays notable clients and customer categories served by IT Soluciones.
- * Uses emoji icons for visual interest. Provides credibility through client references.
+ * Uses business logos for visual interest. Provides credibility through client references.
  * 
  * @features
- * - Featured business clients
+ * - Featured business clients with official logos
  * - Individual clients category
- * - Emoji-based visual icons
+ * - High-quality WEBP images
  * - Responsive grid layout
  * 
  * @example
@@ -30,12 +31,28 @@ import { SectionTitleComponent } from '../../shared/components/section-title/sec
 export class ClientsSectionComponent {
   /**
    * List of notable clients and customer segments.
-   * Each entry includes company/category name and emoji icon.
+   * Each entry includes company name, logo path, and descriptive alt text.
    */
-  clients = [
-    { name: 'Supermotos del Golfo', icon: '🏍️' },
-    { name: 'Nuevo Récord', icon: '🏢' },
-    { name: 'Cerámicas El Rodeo', icon: '🏗️' },
-    { name: 'Clientes Particulares', icon: '👥' }
+  clients: Client[] = [
+    { 
+      name: 'Supermotos del Golfo', 
+      logo: '/supermotos_del_golfo.webp',
+      alt: 'Logo de Supermotos del Golfo Onda'
+    },
+    { 
+      name: 'Nuevo Récord', 
+      logo: '/nuevo_record.webp',
+      alt: 'Logo de Almacén Nuevo Récord'
+    },
+    { 
+      name: 'Cerámicas El Rodeo', 
+      logo: '/el_rodeo.webp',
+      alt: 'Logo de Cerámicas El Rodeo'
+    },
+    { 
+      name: 'Clientes Particulares', 
+      logo: '/all_clients.webp',
+      alt: 'Icono representativo de clientes particulares'
+    }
   ];
 }

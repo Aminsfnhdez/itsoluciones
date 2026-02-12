@@ -29,7 +29,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ButtonComponent {
   /** Button visual style variant @default 'primary' */
-  @Input() variant: 'primary' | 'secondary' | 'outline' | 'ghost' = 'primary';
+  @Input() variant: 'primary' | 'secondary' | 'outline' | 'ghost' | 'whatsapp' = 'primary';
   
   /** Button size @default 'md' */
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
@@ -61,7 +61,8 @@ export class ButtonComponent {
       primary: 'bg-gradient-to-r from-primary-blue to-primary-cyan text-white hover:shadow-lg hover:shadow-primary-blue/50 hover:scale-105',
       secondary: 'bg-bg-card text-white border border-slate-700 hover:border-primary-cyan hover:bg-bg-dark',
       outline: 'border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white',
-      ghost: 'text-primary-cyan hover:bg-primary-cyan/10'
+      ghost: 'text-primary-cyan hover:bg-primary-cyan/10',
+      whatsapp: 'bg-whatsapp text-white hover:bg-whatsapp-dark hover:shadow-lg hover:shadow-whatsapp/50 hover:scale-105'
     };
     
     const sizeClasses = {
